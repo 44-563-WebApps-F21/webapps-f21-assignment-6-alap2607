@@ -28,7 +28,20 @@
     <p id="power_results">This Results will be replaced </p>
     <br>
 
-   
+    <form>
+        <input type="radio" id="addition_radio" onclick="processRadio()" name="Workingonradio" value="plus">
+        <label for="addition_radio">+ </label>
+        <br>
+        <input type="radio" id="subtraction_radio" onclick="processRadio()" name="Workingonradio" value="minus">
+        <label for="subtraction_radio">- </label>
+        <br>
+        <input type="radio" id="multiplication_radio" onclick="processRadio()" name="Workingonradio" value="times">
+        <label for="multiplication_radio">* </label>
+        <br>
+        <input type="radio" id="division_radio" onclick="processRadio()" name="Workingonradio" value="divide">
+        <label for="division_radio">/ </label>
+    </form>
+
 
     <div id="calculation_result"></div>
     <script>
@@ -50,6 +63,25 @@
             }
             out.innerHTML = power_results
         }
+
+        function processRadio() {
+
+        var firstinput = parseInt(document.getElementById("number_1").value);
+        var secondinput = parseInt(document.getElementById("number_2").value);
+
+        process = document.getElementById("calculation_result")
+
+        if (document.getElementById("addition_radio").checked) {
+        process.innerHTML = firstinput + secondinput;
+        } else if (document.getElementById("subtraction_radio").checked) {
+        process.innerHTML = firstinput - secondinput;
+        } else if (document.getElementById("multiplication_radio").checked) {
+        process.innerHTML = firstinput * secondinput;
+        } else {
+        process.innerHTML = firstinput / secondinput;
+        }
+        }
+
 
         
     </script>
