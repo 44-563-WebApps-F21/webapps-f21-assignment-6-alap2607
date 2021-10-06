@@ -16,38 +16,53 @@
 <body>
     <h1>Navya Sri Alaparthi - Order a Car</h1>
     <form>
-        <input type="checkbox" id="box_electric" name="checkbox_electric" value="electric">
-        <label for="box_electric">electric</label>
+        <input type="checkbox" id="car_electric" name="checkbox_electric" value="electric">
+        <label for="car_electric">electric</label>
         <br>
 
-        <input type="checkbox" id="box_ac" name="checkbox_ac" value="ac">
-        <label for="box_ac">ac</label>
+        <input type="checkbox" id="car_ac" name="checkbox_ac" value="ac">
+        <label for="car_ac">ac</label>
         <br>
 
-        <input type="checkbox" id="box_gps" name="checkbox_gps" value="gps">
-        <label for="box_gps">gps</label>
+        <input type="checkbox" id="car_gps" name="checkbox_gps" value="gps">
+        <label for="car_gps">gps</label>
         <br>
 
         <input class="btn btn-primary" type="button" onclick="orderCar()" value="Order a Car">
     </form>
+
+    <form>
+
+        <label for="property_of_the_car">Enter a property</label>
+        <input type="text" id="property_of_the_car" name="car_property" value="color">
+        <br>
+        <label for="value_of_the_car">Enter a value </label>
+        <input type="text" id="value_of_the_car" name="car_value">
+        <br>
+
+        <input class="btn btn-primary" type="button" onclick="updateCar()" value="Update the Car">
+    </form>
+    <div id="result"></div>
+    
+
     <script>
         var my_car = {};
         function orderCar() {
-            my_bear = {};
-            if (document.getElementById("box_electric").checked) {
-                my_bear["electric"] = true;
+            my_car = {};
+            if (document.getElementById("car_electric").checked) {
+                my_car["electric"] = true;
             } else {
-                my_bear["electric"] = false;
+                my_car["electric"] = false;
             }
-            if (document.getElementById("box_ac").checked) {
-                my_bear["ac"] = true;
+            if (document.getElementById("car_ac").checked) {
+                my_car["ac"] = true;
             } else {
-                my_bear["sc"] = false;
+                my_car["ac"] = false;
             }
-            if (document.getElementById("box_gps").checked) {
-                my_bear["gps"] = true;
+            if (document.getElementById("car_gps").checked) {
+                my_car["gps"] = true;
             } else {
-                my_bear["gps"] = false;
+                my_car["gps"] = false;
             }
         
 
@@ -55,6 +70,17 @@
     document.getElementById("result").innerHTML=my_car
     my_bear= JSON.parse(my_car)
     }
+
+    function updateCar() {
+            var properties = document.getElementById("Property_of_the_car").value;
+            var values = document.getElementById("value_of_the_car").value;
+            my_car[properties] = values;
+
+            my_car = JSON.stringify(my_car);
+            document.getElementById("result").innerHTML = my_car;
+            my_car = JSON.parse(my_car);
+        }
+
     </script>
 
 
