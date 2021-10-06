@@ -30,11 +30,17 @@
 
     <div id="result"></div>
 
+    <div id="main_img">
+        <img src="panda.jpg" id="new" type="button" onclick="newImage()"   width="200px" height="200px" />
+        
+    </div>
     
 
     <script>
 
         var correct = 0, wrong = 0;
+        
+        var usingImage = 0;
 
         function processPhrase() {
 
@@ -68,10 +74,28 @@
 
             resultDiv.innerHTML = "Correct count: " + correct + '<br>' + " Worng count: " + wrong;
 
-            
+
         }
 
+        function newImage() {
 
+            switch (usingImage) {
+                case 0:
+                    document.getElementById("new").src = "elep.jpg";
+                    usingImage=1;
+                    break;
+                case 1:
+                    document.getElementById("new").src = "panda.jpg";
+                    usingImage=2;
+                    break;
+                case 2:
+                    document.getElementById("new").src = "pup.jpg";
+                    usingImage=0;
+                    break;
+                default:
+                    document.getElementById("new").src = "panda.jpg";
+            }
+        }
     </script>
 
 
