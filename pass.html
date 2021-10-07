@@ -41,6 +41,7 @@
         var correct = 0, wrong = 0;
         
         var usingImage = 0;
+        var attempt = 3;
 
         function processPhrase() {
 
@@ -66,8 +67,12 @@
 
                 wrong = wrong + 1;
 
-            
-
+                attempt--;
+                alert("Access denied " + " You have left " + attempt + " attempt;");
+                out.innerHTML = wrong
+                if (wrong >= 3) {
+                    lock()
+                }
 
         }
 
@@ -95,6 +100,11 @@
                 default:
                     document.getElementById("new").src = "panda.jpg";
             }
+        }
+
+        function lock() {
+            alert("Account Locked");
+            window.location = "pass.html";
         }
     </script>
 
