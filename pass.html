@@ -60,20 +60,20 @@
                 alert("Access allowed");
 
                 correct = correct + 1;
+            }
+                else if(wrong>=2){
+                
+                    document.getElementById("Account").onclick=lockAccount()
 
-            } else {
+                } else {
 
                 alert("Access denied");
 
                 wrong = wrong + 1;
-
-                attempt--;
-                alert("Access denied " + " You have left " + attempt + " attempt;");
-                out.innerHTML = wrong
-                if (wrong >= 3) {
-                    lock()
-                }
-
+        }
+        
+        function lockAccount(){
+        alert("Account locked")
         }
 
 
