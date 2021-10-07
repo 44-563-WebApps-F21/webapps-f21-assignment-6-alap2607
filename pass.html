@@ -3,21 +3,28 @@
 
 <head>
     <title>Pass Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" 
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <h1>Pass phrase by Navya Sri Alaparthi</h1>
-    <h2>Getting input</h2>
+    <h1 style="color:coral">Pass phrase by Navya Sri Alaparthi</h1>
+    <h2 style="color: cornflowerblue;">Getting input</h2>
 
     <form>
 
-        <label for="secretphase">Enter the secret phrase </label>
+        <label for="secretphase" style="color: green;">Enter the secret phrase </label>
 
         <input type="password" id="secretphase" value="Let me in"> <br>
 
 
 
-        <label for="phrase">Enter a phrase </label>
+        <label for="phrase" style="color: darkorchid;">Enter a phrase </label>
 
         <input type="text" id="phrase" autofocus> <br>
 
@@ -26,7 +33,7 @@
         <input type="button" onclick="processPhrase()" value="Check the phrase" />
 
     </form>
-    <p>This text will be replaced</p>
+    <p style="color: deeppink;">This text will be replaced</p>
 
     <div id="result"></div>
 
